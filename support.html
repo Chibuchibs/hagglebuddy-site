@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get help with HaggleBuddy: how prices are collected, how the AI Haggle Coach works, which markets are covered, and how to contact us." />
+  <title>HaggleBuddy Support — Help, FAQs and Contact</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+  <meta name="theme-color" content="#16a34a">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #16a34a; --green-dark: #15803d; --green-light: #f0fdf4;
+      --green-mid: #dcfce7; --dark: #0f172a; --navy: #1e293b; --grey: #64748b;
+      --light: #f8fafc; --border: #e2e8f0; --white: #ffffff;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--dark); background: var(--white); line-height: 1.6; }
+    a { color: var(--green); text-decoration: none; }
+    nav {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800; color: var(--dark); text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; border-radius: 8px; background: #16a34a; display: flex; align-items: center; justify-content: center; }
+    .nav-back { font-size: 14px; color: var(--grey); }
+    .nav-back:hover { color: var(--green); }
+
+    .hero-small { background: var(--dark); padding: 56px 24px 48px; text-align: center; }
+    .hero-small h1 { font-size: 36px; font-weight: 900; color: var(--white); margin-bottom: 10px; }
+    .hero-small p { font-size: 15px; color: rgba(255,255,255,0.55); }
+
+    .content { max-width: 900px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    /* Contact Cards */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 64px; }
+    .contact-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      transition: box-shadow .2s, transform .15s;
+    }
+    .contact-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .contact-card-icon { font-size: 36px; margin-bottom: 14px; }
+    .contact-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+    .contact-card p { font-size: 14px; color: var(--grey); margin-bottom: 16px; }
+    .contact-card a {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: background .2s;
+    }
+    .contact-card a:hover { background: var(--green-dark); }
+
+    /* FAQ */
+    .faq-section h2 { font-size: 28px; font-weight: 900; margin-bottom: 8px; }
+    .faq-sub { font-size: 16px; color: var(--grey); margin-bottom: 36px; }
+
+    .faq-category { margin-bottom: 48px; }
+    .faq-category-title {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--green);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--green-mid);
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    details[open] { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+    summary {
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--grey);
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    details[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-answer { padding: 18px 20px; font-size: 15px; color: #374151; line-height: 1.75; background: var(--light); }
+    .faq-answer p { margin-bottom: 10px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer ul { padding-left: 20px; margin: 10px 0; }
+    .faq-answer li { margin-bottom: 6px; }
+
+    /* Still need help */
+    .still-help {
+      background: linear-gradient(135deg, var(--dark), #0d2010);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      margin-top: 64px;
+    }
+    .still-help h2 { font-size: 26px; font-weight: 900; color: var(--white); margin-bottom: 10px; }
+    .still-help p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+    .still-help a {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .still-help a:hover { background: var(--green-dark); }
+
+    footer { background: var(--dark); text-align: center; padding: 32px 24px; color: rgba(255,255,255,0.5); font-size: 13px; }
+    footer a { color: rgba(255,255,255,0.6); margin: 0 10px; }
+    footer a:hover { color: #4ade80; }
+
+    @media (max-width: 600px) { .still-help { padding: 32px 24px; } }
+  </style>
+  <link rel="canonical" href="https://hagglebuddy.com/support" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HaggleBuddy" />
+  <meta property="og:title" content="HaggleBuddy Support" />
+  <meta property="og:description" content="Get help with HaggleBuddy: how prices are collected, how the AI Haggle Coach works, which markets are covered, and how to contact us." />
+  <meta property="og:url" content="https://hagglebuddy.com/support" />
+  <meta property="og:image" content="https://hagglebuddy.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_NG" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HaggleBuddy Support" />
+  <meta name="twitter:description" content="Get help with HaggleBuddy: how prices are collected, how the AI Haggle Coach works, which markets are covered, and how to contact us." />
+  <meta name="twitter:image" content="https://hagglebuddy.com/og-card.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is HaggleBuddy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HaggleBuddy is a mobile app that helps Nigerian shoppers check real, crowdsourced market prices before they buy \u2014 and then coaches them on how to negotiate using an AI Haggle Coach. You can search the items HaggleBuddy covers \u2014 food staples like tomatoes, rice, beans, yam, peppers and oils, plus phones and accessories \u2014 in English, Yoruba, Igbo or Hausa, see what they currently cost at markets across Nigeria, and then get a personalised negotiation script to help you get a fair price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is HaggleBuddy free to download?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 HaggleBuddy is completely free to download on both the Apple App Store and Google Play Store. The free version gives you access to the full market price database and 5 AI Haggle Coach sessions per day. HaggleBuddy Pro removes the daily limit: unlimited AI coaching and unlimited Practice Mode. Price alerts and price history are free for everyone and stay that way. Pro is priced in your own currency \u2014 see the pricing section , or the App Store / Google Play, which shows the exact amount before you confirm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account to use HaggleBuddy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No \u2014 just download the app and start checking prices right away. HaggleBuddy works with no sign-up: no name, email, or password required. Your reports, points, and Pro status are saved automatically on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which devices does HaggleBuddy support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HaggleBuddy is available on: iOS 15 and above (iPhone and iPad) Android 8.0 and above We recommend keeping your device's OS updated for the best experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are the prices on HaggleBuddy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prices on HaggleBuddy are crowdsourced from real shoppers who have recently visited the market. Each price report includes the market, date, and a verified user who submitted it. Reports are flagged and reviewed if they appear to be outliers. We always display prices as averages and ranges \u2014 not exact quotes \u2014 because market prices naturally fluctuate by vendor, time of day, and season. Use our prices as a guide to understand the fair range before you negotiate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are prices updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prices are updated continuously as community members submit new reports. Popular items in high-traffic markets like Mile 12 and Balogun are typically updated multiple times per day. Less common items may have prices from the past week. Each listing shows when the most recent price report was submitted so you know how current the data is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which markets are covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We cover markets across Lagos, Abuja, Anambra, Abia, Kaduna, Kano and beyond, including: Lagos \u2014 Mile 12, Balogun, Oyingbo, Ketu, Agege, Oshodi, Mushin, Yaba, Idumota, Alaba International, Ladipo, fish markets at Makoko, Boundary and Epe, and Computer Village (Ikeja) Abuja (FCT) \u2014 Wuse, Garki, New Artisan, GSM Village (Wuse Zone 1) Anambra \u2014 Onitsha Main Market, Emeka Offor Plaza Abia \u2014 Ariaria Market, Aba ICT & GSM Mall Kaduna \u2014 Central, Sabon Gari, Kawo, Kakuri, Zaria City, Kasuwan Magani Kano \u2014 Dawanau, Yankaba, Kurmi More markets and cities are rolling out as our community grows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I report a price I saw at the market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 and we strongly encourage it. Reporting prices helps the whole community and earns you trust badges in the app. To report a price, tap the \"Report Price\" button on any item page, enter the price you saw, the market you were at, and the date. All reports are reviewed to ensure quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the AI Haggle Coach work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AI Haggle Coach is powered by Anthropic's Claude AI. You tell it what you want to buy, which market you're at, and what the seller is asking. The coach then generates a personalised, conversational negotiation script you can use immediately. For example: \"I want to buy tomatoes at Mile 12. The seller is asking \u20a66,000.\" The coach will check real prices, confirm whether that price is fair, and give you an opening offer, a counter-offer strategy, and walkaway advice \u2014 all in natural language."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Practice (Roleplay) Mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Practice Mode lets you rehearse your haggling skills against an AI that pretends to be a Nigerian market seller. Tell the AI what you want to buy, and it will set an inflated price and push back on your offers \u2014 just like a real market situation. This helps you build confidence before you negotiate for real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the free plan limit me to 5 AI sessions per day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each AI session uses real computing resources. The 5-session daily limit on the free plan allows us to keep HaggleBuddy free for everyone while covering operational costs. If you shop frequently and want unlimited coaching, HaggleBuddy Pro gives you unlimited access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my conversations with the AI stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your conversations with the AI Haggle Coach are not stored on our servers beyond the duration of your session. When you close the chat, the conversation is cleared. We do not use your coaching conversations to train AI models. Please see our Privacy Policy for full details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I upgrade to HaggleBuddy Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the app, tap the Profile tab, then tap \"Upgrade to Pro\". Payment is handled securely through the App Store or Google Play. Pro is available monthly or yearly, priced in your local currency and shown in full before you confirm, and can be cancelled anytime from your App Store / Google Play subscription settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I cancel my Pro subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can cancel your HaggleBuddy Pro subscription at any time. Your access will continue until the end of the current billing period. iOS: Go to Settings \u2192 [Your Name] \u2192 Subscriptions \u2192 HaggleBuddy \u2192 Cancel Subscription Android: Open Google Play \u2192 tap your profile \u2192 Payments & subscriptions \u2192 Subscriptions \u2192 HaggleBuddy \u2192 Cancel"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I delete my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because HaggleBuddy has no login, your data is tied to your app install. You can request full deletion at any time \u2014 we'll permanently remove your reports, points, and identifiers within 30 days. This cannot be undone. Alternatively, email us at support@hagglebuddy.com with the subject \"Delete Account\" and we will process it within 5 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I lose my data if I reinstall the app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because HaggleBuddy doesn't use logins, your points and history are tied to your current install, so reinstalling or switching devices resets them. Your Pro subscription is safe, though \u2014 tap \"Restore Purchases\" on the Pro screen to bring it back (it's linked to your App Store / Google Play account). Questions? Email support@hagglebuddy.com ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The app is not loading prices. What do I do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is usually a connectivity issue. Try the following: Check your internet connection (WiFi or mobile data) Pull down to refresh on the home screen Close and reopen the app Ensure you have the latest version of HaggleBuddy installed If prices still won't load, we may be doing maintenance. Check our social media pages for updates, or email us at support@hagglebuddy.com ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The AI Coach is not responding. What should I do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the AI coach doesn't respond or shows an error: Check your internet connection \u2014 the AI requires an active connection Check whether you have used your 5 free sessions for the day (free plan only) Try closing the chat and starting a new one Restart the app if the issue persists If you're on the Pro plan and still experiencing issues, please email support@hagglebuddy.com with a description of what happened."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I update the app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HaggleBuddy updates are distributed through the App Store (iOS) and Google Play (Android). Enable automatic updates in your device settings to always have the latest version, or visit the store page manually to check for updates."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-1"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
+    HaggleBuddy
+  </a>
+  <a href="/" class="nav-back">← Back to Home</a>
+</nav>
+
+<div class="hero-small">
+  <h1>Support Centre</h1>
+  <p>Get help with HaggleBuddy. We typically respond within 24 hours.</p>
+</div>
+
+<div class="content">
+
+  <!-- Contact Options -->
+  <div class="contact-grid" style="margin-top: 0;">
+    <div class="contact-card">
+      <div class="contact-card-icon">📧</div>
+      <h3>Email Support</h3>
+      <p>Send us a message and we'll get back to you within 24 hours (business days).</p>
+      <a href="mailto:support@hagglebuddy.com">Send Email</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🐛</div>
+      <h3>Report a Bug</h3>
+      <p>Found something broken in the app? Let us know so we can fix it fast.</p>
+      <a href="mailto:support@hagglebuddy.com?subject=Bug Report — HaggleBuddy">Report Bug</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">💡</div>
+      <h3>Feature Request</h3>
+      <p>Have an idea for something we should add? We read every suggestion.</p>
+      <a href="mailto:support@hagglebuddy.com?subject=Feature Request — HaggleBuddy">Share Idea</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">📰</div>
+      <h3>Press Enquiries</h3>
+      <p>Media, partnerships, or business enquiries — get in touch with our team.</p>
+      <a href="mailto:support@hagglebuddy.com?subject=Press Enquiry — HaggleBuddy">Contact Press</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p class="faq-sub">Quick answers to the questions we hear most often.</p>
+
+    <!-- Getting Started -->
+    <div class="faq-category">
+      <div class="faq-category-title">Getting Started</div>
+
+      <details>
+        <summary>What is HaggleBuddy?</summary>
+        <div class="faq-answer">
+          <p>HaggleBuddy is a mobile app that helps Nigerian shoppers check real, crowdsourced market prices before they buy — and then coaches them on how to negotiate using an AI Haggle Coach.</p>
+          <p>You can search the items HaggleBuddy covers — food staples like tomatoes, rice, beans, yam, peppers and oils, plus phones and accessories — in English, Yoruba, Igbo or Hausa, see what they currently cost at markets across Nigeria, and then get a personalised negotiation script to help you get a fair price.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is HaggleBuddy free to download?</summary>
+        <div class="faq-answer">
+          <p>Yes — HaggleBuddy is completely free to download on both the Apple App Store and Google Play Store. The free version gives you access to the full market price database and 5 AI Haggle Coach sessions per day.</p>
+          <p>HaggleBuddy Pro removes the daily limit: unlimited AI coaching and unlimited Practice Mode. Price alerts and price history are free for everyone and stay that way. Pro is priced in your own currency — see the <a href="/#pricing">pricing section</a>, or the App Store / Google Play, which shows the exact amount before you confirm.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do I need an account to use HaggleBuddy?</summary>
+        <div class="faq-answer">
+          <p>No — just download the app and start checking prices right away. HaggleBuddy works with no sign-up: no name, email, or password required. Your reports, points, and Pro status are saved automatically on your device.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Which devices does HaggleBuddy support?</summary>
+        <div class="faq-answer">
+          <p>HaggleBuddy is available on:</p>
+          <ul>
+            <li>iOS 15 and above (iPhone and iPad)</li>
+            <li>Android 8.0 and above</li>
+          </ul>
+          <p>We recommend keeping your device's OS updated for the best experience.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Market Prices -->
+    <div class="faq-category">
+      <div class="faq-category-title">Market Prices</div>
+
+      <details>
+        <summary>How accurate are the prices on HaggleBuddy?</summary>
+        <div class="faq-answer">
+          <p>Prices on HaggleBuddy are crowdsourced from real shoppers who have recently visited the market. Each price report includes the market, date, and a verified user who submitted it. Reports are flagged and reviewed if they appear to be outliers.</p>
+          <p>We always display prices as averages and ranges — not exact quotes — because market prices naturally fluctuate by vendor, time of day, and season. Use our prices as a guide to understand the fair range before you negotiate.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How often are prices updated?</summary>
+        <div class="faq-answer">
+          <p>Prices are updated continuously as community members submit new reports. Popular items in high-traffic markets like Mile 12 and Balogun are typically updated multiple times per day. Less common items may have prices from the past week.</p>
+          <p>Each listing shows when the most recent price report was submitted so you know how current the data is.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Which markets are covered?</summary>
+        <div class="faq-answer">
+          <p>We cover markets across Lagos, Abuja, Anambra, Abia, Kaduna, Kano and beyond, including:</p>
+          <ul>
+            <li>Lagos — Mile 12, Balogun, Oyingbo, Ketu, Agege, Oshodi, Mushin, Yaba, Idumota, Alaba International, Ladipo, fish markets at Makoko, Boundary and Epe, and Computer Village (Ikeja)</li>
+            <li>Abuja (FCT) — Wuse, Garki, New Artisan, GSM Village (Wuse Zone 1)</li>
+            <li>Anambra — Onitsha Main Market, Emeka Offor Plaza</li>
+            <li>Abia — Ariaria Market, Aba ICT &amp; GSM Mall</li>
+            <li>Kaduna — Central, Sabon Gari, Kawo, Kakuri, Zaria City, Kasuwan Magani</li>
+            <li>Kano — Dawanau, Yankaba, Kurmi</li>
+          </ul>
+          <p>More markets and cities are rolling out as our community grows.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I report a price I saw at the market?</summary>
+        <div class="faq-answer">
+          <p>Yes — and we strongly encourage it. Reporting prices helps the whole community and earns you trust badges in the app. To report a price, tap the "Report Price" button on any item page, enter the price you saw, the market you were at, and the date. All reports are reviewed to ensure quality.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- AI Haggle Coach -->
+    <div class="faq-category">
+      <div class="faq-category-title">AI Haggle Coach</div>
+
+      <details>
+        <summary>How does the AI Haggle Coach work?</summary>
+        <div class="faq-answer">
+          <p>The AI Haggle Coach is powered by Anthropic's Claude AI. You tell it what you want to buy, which market you're at, and what the seller is asking. The coach then generates a personalised, conversational negotiation script you can use immediately.</p>
+          <p>For example: "I want to buy tomatoes at Mile 12. The seller is asking ₦6,000." The coach will check real prices, confirm whether that price is fair, and give you an opening offer, a counter-offer strategy, and walkaway advice — all in natural language.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is Practice (Roleplay) Mode?</summary>
+        <div class="faq-answer">
+          <p>Practice Mode lets you rehearse your haggling skills against an AI that pretends to be a Nigerian market seller. Tell the AI what you want to buy, and it will set an inflated price and push back on your offers — just like a real market situation. This helps you build confidence before you negotiate for real.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Why does the free plan limit me to 5 AI sessions per day?</summary>
+        <div class="faq-answer">
+          <p>Each AI session uses real computing resources. The 5-session daily limit on the free plan allows us to keep HaggleBuddy free for everyone while covering operational costs. If you shop frequently and want unlimited coaching, HaggleBuddy Pro gives you unlimited access.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Are my conversations with the AI stored?</summary>
+        <div class="faq-answer">
+          <p>Your conversations with the AI Haggle Coach are not stored on our servers beyond the duration of your session. When you close the chat, the conversation is cleared. We do not use your coaching conversations to train AI models. Please see our <a href="/privacy">Privacy Policy</a> for full details.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Account & Billing -->
+    <div class="faq-category">
+      <div class="faq-category-title">Account &amp; Billing</div>
+
+      <details>
+        <summary>How do I upgrade to HaggleBuddy Pro?</summary>
+        <div class="faq-answer">
+          <p>Open the app, tap the Profile tab, then tap "Upgrade to Pro". Payment is handled securely through the App Store or Google Play. Pro is available monthly or yearly, priced in your local currency and shown in full before you confirm, and can be cancelled anytime from your App Store / Google Play subscription settings.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I cancel my Pro subscription?</summary>
+        <div class="faq-answer">
+          <p>You can cancel your HaggleBuddy Pro subscription at any time. Your access will continue until the end of the current billing period.</p>
+          <ul>
+            <li><strong>iOS:</strong> Go to Settings → [Your Name] → Subscriptions → HaggleBuddy → Cancel Subscription</li>
+            <li><strong>Android:</strong> Open Google Play → tap your profile → Payments &amp; subscriptions → Subscriptions → HaggleBuddy → Cancel</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I delete my data?</summary>
+        <div class="faq-answer">
+          <p>Because HaggleBuddy has no login, your data is tied to your app install. You can request full deletion at any time — we'll permanently remove your reports, points, and identifiers within 30 days. This cannot be undone.</p>
+          <p>Alternatively, email us at <a href="mailto:support@hagglebuddy.com">support@hagglebuddy.com</a> with the subject "Delete Account" and we will process it within 5 business days.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Will I lose my data if I reinstall the app?</summary>
+        <div class="faq-answer">
+          <p>Because HaggleBuddy doesn't use logins, your points and history are tied to your current install, so reinstalling or switching devices resets them. Your Pro subscription is safe, though — tap "Restore Purchases" on the Pro screen to bring it back (it's linked to your App Store / Google Play account). Questions? Email <a href="mailto:support@hagglebuddy.com">support@hagglebuddy.com</a>.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="faq-category">
+      <div class="faq-category-title">Troubleshooting</div>
+
+      <details>
+        <summary>The app is not loading prices. What do I do?</summary>
+        <div class="faq-answer">
+          <p>This is usually a connectivity issue. Try the following:</p>
+          <ul>
+            <li>Check your internet connection (WiFi or mobile data)</li>
+            <li>Pull down to refresh on the home screen</li>
+            <li>Close and reopen the app</li>
+            <li>Ensure you have the latest version of HaggleBuddy installed</li>
+          </ul>
+          <p>If prices still won't load, we may be doing maintenance. Check our social media pages for updates, or email us at <a href="mailto:support@hagglebuddy.com">support@hagglebuddy.com</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>The AI Coach is not responding. What should I do?</summary>
+        <div class="faq-answer">
+          <p>If the AI coach doesn't respond or shows an error:</p>
+          <ul>
+            <li>Check your internet connection — the AI requires an active connection</li>
+            <li>Check whether you have used your 5 free sessions for the day (free plan only)</li>
+            <li>Try closing the chat and starting a new one</li>
+            <li>Restart the app if the issue persists</li>
+          </ul>
+          <p>If you're on the Pro plan and still experiencing issues, please email <a href="mailto:support@hagglebuddy.com">support@hagglebuddy.com</a> with a description of what happened.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I update the app?</summary>
+        <div class="faq-answer">
+          <p>HaggleBuddy updates are distributed through the App Store (iOS) and Google Play (Android). Enable automatic updates in your device settings to always have the latest version, or visit the store page manually to check for updates.</p>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+  <!-- Still need help -->
+  <div class="still-help">
+    <h2>Still need help?</h2>
+    <p>Our support team responds within 24 hours on business days.</p>
+    <a href="mailto:support@hagglebuddy.com">Email Us — support@hagglebuddy.com</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Haggle & Dende Limited · Kaduna, Nigeria</p>
+  <p style="margin-top:10px">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms</a>
+    <a href="mailto:support@hagglebuddy.com">support@hagglebuddy.com</a>
+  </p>
+</footer>
+
+</body>
+</html>

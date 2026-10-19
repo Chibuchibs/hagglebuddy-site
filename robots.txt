@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# The .html twins serve the same pages as the clean paths (both return 200).
+# Canonicals point at the clean paths; block the duplicates.
+Disallow: /index.html
+Disallow: /support.html
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /delete-account.html
+
+Sitemap: https://hagglebuddy.com/sitemap.xml
