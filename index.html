@@ -511,8 +511,28 @@
     .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: color .2s; }
     .footer-bottom-links a:hover { color: #4ade80; }
 
+    /* ── PRICE BAND ── */
+    /* The one photograph on the page (built by store-assets/marketing/build-price-band.py).
+       The fade to green is baked into the JPEG, so the copy sits on flat colour on
+       desktop; phones get their own face-centred strip on top with text below. */
+    .priceband {
+      margin-top: 64px; border-radius: 20px; overflow: hidden;
+      background: #142818 url(img/price-band.jpg) right center / auto 100% no-repeat;
+      min-height: 340px; display: flex; align-items: center;
+      border: 1px solid #1f3a24;
+    }
+    .priceband .pbtext { width: 52%; padding: 40px 44px; text-align: left; }
+    .priceband h2 { font-size: clamp(24px, 2.8vw, 32px); font-weight: 800; color: #fff;
+                    margin: 0 0 12px; letter-spacing: -.02em; line-height: 1.2; }
+    .priceband p { color: #b7d3bd; font-size: 16px; line-height: 1.65; margin: 0 0 22px; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      .priceband {
+        display: block; min-height: 0; text-align: center;
+        background: #142818 url(img/price-band-sm.jpg) center top / 100% auto no-repeat;
+      }
+      .priceband .pbtext { width: auto; padding: calc(62.7% + 6px) 22px 32px; text-align: center; }
       .nav-links { display: none; }
       .hero { padding: 60px 20px 70px; }
       .hero-phones { height: 260px; }
@@ -766,6 +786,14 @@
         <div class="step-num">3</div>
         <h3>Haggle with Confidence</h3>
         <p>Open the AI Haggle Coach, describe your situation, and get an exact script to use. Practice in Roleplay Mode if you want, then go get the deal.</p>
+      </div>
+    </div>
+
+    <div class="priceband">
+      <div class="pbtext">
+        <h2>No let anybody price you anyhow</h2>
+        <p>Real prices from Lagos markets like Oshodi, Mile 12, Ketu and Agege, each one dated so you know how fresh it is. Check before you buy, then haggle like you know the price. Because you do.</p>
+        <a href="#download" class="btn-primary">Get HaggleBuddy free</a>
       </div>
     </div>
   </div>
