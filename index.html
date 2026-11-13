@@ -1079,5 +1079,57 @@
 })();
 </script>
 
+<script>
+// Cookie-free visit counter (supabase/migrations/20261113000000_site_events.sql).
+// No cookies, no IP, no identifier: one anonymous row per page view or store tap.
+// Open the site once with ?nocount to stop counting this browser (?count undoes it).
+(function () {
+  var URL_ = 'https://telepnaumeivvvpvwgps.supabase.co/rest/v1/site_events';
+  var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlbGVwbmF1bWVpdnZ2cHZ3Z3BzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE3MjA5NzIsImV4cCI6MjA5NzI5Njk3Mn0.tpYFlBQLzWOygidCqJ0ljDCIQ0BrSX0irmC0JxONLjk';
+  try {
+    var q = location.search;
+    if (/[?&]nocount\b/.test(q)) localStorage.setItem('hb_nocount', '1');
+    if (/[?&]count\b/.test(q)) localStorage.removeItem('hb_nocount');
+    if (localStorage.getItem('hb_nocount')) return;
+  } catch (e) {}
+  if (navigator.webdriver) return;
+
+  function cut(s, n) { return s ? String(s).slice(0, n) : null; }
+  var tz = null, ref = null;
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) {}
+  try { if (document.referrer) ref = new URL(document.referrer).hostname; } catch (e) {}
+  if (ref === location.hostname) ref = null;
+  var base = {
+    page: cut(location.pathname, 64),
+    ref: cut(ref, 100),
+    tz: cut(tz, 64),
+    lang: cut(navigator.language, 35),
+    mobile: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)
+  };
+
+  function send(kind, store) {
+    var row = { kind: kind, store: store || null };
+    for (var k in base) row[k] = base[k];
+    try {
+      fetch(URL_, {
+        method: 'POST',
+        keepalive: true,
+        headers: { apikey: KEY, Authorization: 'Bearer ' + KEY,
+                   'Content-Type': 'application/json', Prefer: 'return=minimal' },
+        body: JSON.stringify(row)
+      }).catch(function () {});
+    } catch (e) {}
+  }
+
+  send('view');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.href.indexOf('play.google.com') > -1) send('store_click', 'play');
+    else if (a.href.indexOf('apps.apple.com') > -1) send('store_click', 'apple');
+  });
+})();
+</script>
+
 </body>
 </html>
