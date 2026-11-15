@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="QTm0MZ8YiQZVRjsHvcDQb-NTb_LpfuG84BikyHxNyH8" />
-  <meta name="description" content="Check real prices from Nigerian markets before you buy. Crowdsourced prices from Lagos, Abuja, Kano and Kaduna, plus free alerts and an AI haggle coach." />
+  <meta name="description" content="Check real prices from Nigerian markets before you buy. Prices reported by shoppers at Lagos markets like Mile 12, Oshodi, Ketu and Agege, each one dated, plus an AI haggle coach." />
 
 
 
@@ -548,12 +548,29 @@
       .hero-phones { height: 220px; }
       .phone-mockup.center { width: 150px; }
     }
+    /* Phone-only "Get the app" bar: appears once the hero buttons scroll away,
+       hides again at the download section so it never doubles up. */
+    .app-bar {
+      position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 200;
+      display: none; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green); color: #fff;
+      padding: 15px 18px; border-radius: 14px;
+      font-size: 16px; font-weight: 800; text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      transform: translateY(140%); transition: transform .25s ease;
+    }
+    .app-bar small { font-weight: 600; opacity: .85; font-size: 13px; }
+    .app-bar.show { transform: translateY(0); }
+    @media (max-width: 768px) {
+      .app-bar { display: flex; }
+      body.has-app-bar footer { padding-bottom: 96px; }
+    }
   </style>
   <link rel="canonical" href="https://hagglebuddy.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="HaggleBuddy" />
   <meta property="og:title" content="HaggleBuddy — Know the fair price before you buy" />
-  <meta property="og:description" content="Check real prices from Nigerian markets before you buy. Crowdsourced prices from Lagos, Abuja, Kano and Kaduna, plus free alerts and an AI haggle coach." />
+  <meta property="og:description" content="Check real prices from Nigerian markets before you buy. Prices reported by shoppers at Lagos markets like Mile 12, Oshodi, Ketu and Agege, each one dated, plus an AI haggle coach." />
   <meta property="og:url" content="https://hagglebuddy.com/" />
   <meta property="og:image" content="https://hagglebuddy.com/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -561,7 +578,7 @@
   <meta property="og:locale" content="en_NG" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="HaggleBuddy — Know the fair price before you buy" />
-  <meta name="twitter:description" content="Check real prices from Nigerian markets before you buy. Crowdsourced prices from Lagos, Abuja, Kano and Kaduna, plus free alerts and an AI haggle coach." />
+  <meta name="twitter:description" content="Check real prices from Nigerian markets before you buy. Prices reported by shoppers at Lagos markets like Mile 12, Oshodi, Ketu and Agege, each one dated, plus an AI haggle coach." />
   <meta name="twitter:image" content="https://hagglebuddy.com/og-card.png" />
   <script type="application/ld+json">
 {
@@ -639,7 +656,7 @@
     Now Live in Nigeria 🇳🇬
   </div>
   <h1>Don't Get<br/><span>Cheated.</span></h1>
-  <p>Check real market prices — food staples from Mile 12 and Balogun, phones &amp; accessories from Computer Village and GSM Village — then let our AI coach teach you exactly how to haggle.</p>
+  <p>Check real prices for tomatoes, yam, palm oil, beans and other foodstuff — reported by shoppers at Lagos markets like Mile 12, Oshodi, Ketu and Agege — then let our AI coach teach you exactly how to haggle.</p>
   <div class="hero-buttons">
     <a href="https://play.google.com/store/apps/details?id=com.hagglebuddy.app" class="btn-primary" target="_blank" rel="noopener">
       <svg class="store-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00d2ff" d="M3.1 1.8a1.6 1.6 0 0 0-.5 1.2v18a1.6 1.6 0 0 0 .5 1.2l.1.1 10.1-10.1v-.4L3.2 1.7z"/><path fill="#ffd400" d="m16.8 15.6-3.5-3.4v-.4l3.5-3.5.1.1 4.2 2.4c1.2.7 1.2 1.8 0 2.5z"/><path fill="#ff3a44" d="m16.9 15.5-3.6-3.6L3.1 22.2c.4.4 1 .5 1.8.1z"/><path fill="#00c853" d="M4.9 1.6c-.7-.4-1.4-.4-1.8.1l10.2 10.2 3.6-3.6z"/></svg>
@@ -658,19 +675,19 @@
         <div class="phone-bar green"></div>
         <div class="phone-bar short" style="margin-bottom:12px"></div>
         <div class="phone-card">
-          <div class="phone-card-title">🍅 Tomatoes (Derica)</div>
-          <div class="phone-card-price">₦1,800 avg</div>
-          <div class="phone-card-sub">Mile 12 · Updated 2h ago</div>
+          <div class="phone-card-title">🍅 Tomatoes (basket)</div>
+          <div class="phone-card-price">₦35,000</div>
+          <div class="phone-card-sub">Mile 12 · Reported 3 Nov</div>
         </div>
         <div class="phone-card">
-          <div class="phone-card-title">🌾 Rice (50kg bag)</div>
-          <div class="phone-card-price">₦74,000 avg</div>
-          <div class="phone-card-sub">Dawanau, Kano · Updated 4h ago</div>
+          <div class="phone-card-title">🍠 Yam (big tuber)</div>
+          <div class="phone-card-price">₦4,500</div>
+          <div class="phone-card-sub">Mile 12 · Reported 3 Nov</div>
         </div>
         <div class="phone-card">
-          <div class="phone-card-title">🔋 Power Bank (10,000mAh)</div>
-          <div class="phone-card-price">₦15,500 avg</div>
-          <div class="phone-card-sub">Computer Village · Updated 1h ago</div>
+          <div class="phone-card-title">🫙 Palm Oil (litre)</div>
+          <div class="phone-card-price">₦1,800</div>
+          <div class="phone-card-sub">Oshodi · Reported 31 Oct</div>
         </div>
         <div class="phone-bar shorter"></div>
       </div>
@@ -680,10 +697,10 @@
       <div class="phone-screen" style="padding:16px 12px">
         <div style="font-size:8px; color:#4ade80; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px">HaggleBuddy AI Coach</div>
         <div style="background:rgba(22,163,74,0.15); border-radius:8px; padding:8px; margin-bottom:8px;">
-          <div style="font-size:8px; color:rgba(255,255,255,0.9); line-height:1.5">Seller says ₦9,000 for a basket of tomatoes at Mile 12. Average is ₦6,200. Here's your script:</div>
+          <div style="font-size:8px; color:rgba(255,255,255,0.9); line-height:1.5">Seller says ₦42,000 for a basket of tomatoes at Mile 12. Last reported price: ₦35,000. Here's your script:</div>
         </div>
         <div style="background:rgba(255,255,255,0.06); border-radius:8px; padding:8px; margin-bottom:8px;">
-          <div style="font-size:7px; color:rgba(255,255,255,0.8); line-height:1.5">"Oga, I like this material but ₦9,000 is too much. I've been buying here for years — let me take it at ₦6,000."</div>
+          <div style="font-size:7px; color:rgba(255,255,255,0.8); line-height:1.5">"Oga, ₦42,000 is too much. I know it's going for about ₦35,000 — let me pay ₦34,000."</div>
         </div>
         <div style="background:rgba(255,255,255,0.04); border-radius:8px; padding:8px">
           <div style="font-size:7px; color:rgba(255,255,255,0.5)">If they say no, walk away slowly...</div>
@@ -716,11 +733,11 @@
 
 <!-- ── TRUST BAR ── -->
 <div class="trust-bar">
-  <div class="trust-item"><span class="trust-icon">🧺</span> Markets Across Nigeria</div>
-  <div class="trust-item"><span class="trust-icon">📍</span> Lagos · Abuja · Kaduna · Kano</div>
+  <div class="trust-item"><span class="trust-icon">🧺</span> Real Foodstuff Prices</div>
+  <div class="trust-item"><span class="trust-icon">📍</span> Mile 12 · Oshodi · Ketu · Agege</div>
   <div class="trust-item"><span class="trust-icon">🧑🏾‍🦱</span> AI Haggle Coach</div>
   <div class="trust-item"><span class="trust-icon">🗣️</span> English, Yoruba, Igbo, Hausa</div>
-  <div class="trust-item"><span class="trust-icon">⚡</span> Prices Updated Daily</div>
+  <div class="trust-item"><span class="trust-icon">📅</span> Every Price Dated</div>
 </div>
 
 <!-- ── FEATURES ── -->
@@ -733,8 +750,8 @@
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">📊</div>
-        <h3>Live Market Prices</h3>
-        <p>Real, crowdsourced prices from Nigeria's biggest markets — updated daily by shoppers like you. Know what things actually cost before you leave home.</p>
+        <h3>Real Market Prices</h3>
+        <p>Prices reported by shoppers at Lagos markets, each one dated so you know how fresh it is. Know what things actually cost before you leave home.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🧑🏾‍🦱</div>
@@ -775,7 +792,7 @@
       <div class="how-step">
         <div class="step-num">1</div>
         <h3>Search Your Item</h3>
-        <p>Type what you need — tomatoes, rice, palm oil, yam, phone chargers, power banks. Search in any Nigerian language. See real prices from real markets across Nigeria.</p>
+        <p>Type what you need — tomatoes, yam, palm oil, beans, eggs. Search in any Nigerian language. See prices shoppers reported at real Lagos markets.</p>
       </div>
       <div class="how-step">
         <div class="step-num">2</div>
@@ -803,8 +820,8 @@
 <section class="markets" id="markets">
   <div class="container">
     <div class="section-label" style="color:#4ade80">Where We Cover</div>
-    <h2 class="section-title">Nigeria's biggest markets,<br/>in your pocket</h2>
-    <p class="section-sub">We cover markets across Lagos, Abuja, Onitsha, Aba, Kaduna, and Kano — including tech hubs like Computer Village (Ikeja) and GSM Village (Abuja) for phones &amp; accessories — with more rolling out as our community grows.</p>
+    <h2 class="section-title">Lagos markets first,<br/>in your pocket</h2>
+    <p class="section-sub">Fresh prices today come from Ketu, Agege, Oshodi and Mile 12 in Lagos. You'll also find older, dated prices from markets in Abuja, Kaduna, Kano, Onitsha and Aba. Every price you report helps a new market go live.</p>
 
     <div class="markets-grid">
       <div class="market-card">
@@ -813,7 +830,7 @@
       </div>
       <div class="market-card">
         <span>🛒</span>
-        <div class="market-info"><strong>Oyingbo Market</strong><small>Lagos · Foodstuffs</small></div>
+        <div class="market-info"><strong>Oshodi Market</strong><small>Lagos · Foodstuffs</small></div>
       </div>
       <div class="market-card">
         <span>🥬</span>
@@ -821,7 +838,7 @@
       </div>
       <div class="market-card">
         <span>🍠</span>
-        <div class="market-info"><strong>Garki Market</strong><small>Abuja · Foodstuffs</small></div>
+        <div class="market-info"><strong>Ketu Market</strong><small>Lagos · Foodstuffs</small></div>
       </div>
       <div class="market-card">
         <span>🌾</span>
@@ -829,7 +846,7 @@
       </div>
       <div class="market-card">
         <span>🫘</span>
-        <div class="market-info"><strong>Ariaria Market</strong><small>Aba · General</small></div>
+        <div class="market-info"><strong>Agege Market</strong><small>Lagos · Foodstuffs</small></div>
       </div>
       <div class="market-card">
         <span>🌽</span>
@@ -874,7 +891,7 @@
         <div class="plan-price"><span data-hb="zero">₦0</span> <span>/ forever</span></div>
         <div class="plan-desc">Everything you need for everyday shopping.</div>
         <ul class="plan-features">
-          <li>Full market price database</li>
+          <li>All market prices</li>
           <li>Search in 4 languages</li>
           <li>5 AI Haggle Coach sessions per day</li>
           <li>Community price reporting</li>
@@ -928,20 +945,20 @@
       </div>
       <div class="about-stat-grid">
         <div class="stat-box">
-          <div class="stat-num">20+</div>
-          <div class="stat-label">Markets covered at launch</div>
+          <div class="stat-num">4</div>
+          <div class="stat-label">Lagos markets with fresh prices</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">4</div>
           <div class="stat-label">Nigerian languages supported</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">1,000+</div>
-          <div class="stat-label">Items in price database</div>
+          <div class="stat-num">60+</div>
+          <div class="stat-label">Foodstuff items tracked</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">Daily</div>
-          <div class="stat-label">Price updates from community</div>
+          <div class="stat-num">Dated</div>
+          <div class="stat-label">Every price shows when it was reported</div>
         </div>
       </div>
     </div>
@@ -1079,6 +1096,56 @@
 })();
 </script>
 
+<a class="app-bar" id="app-bar" href="#download" aria-hidden="true" tabindex="-1">Get HaggleBuddy free</a>
+
+<script>
+// On phones, send every "download" button straight to the visitor's own store
+// (one tap instead of jump-to-bottom-then-tap), and show a sticky "Get the app"
+// bar between the hero buttons and the download section. Desktop is unchanged.
+(function () {
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.hagglebuddy.app';
+  var APPLE = 'https://apps.apple.com/app/id6791811911';
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  var ios = !android && (/iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+  var store = ios ? APPLE : android ? PLAY : null;
+
+  if (store) {
+    var links = document.querySelectorAll('a[href="#download"]');
+    for (var i = 0; i < links.length; i++) {
+      links[i].href = store;
+      links[i].target = '_blank';
+      links[i].rel = 'noopener';
+    }
+  }
+
+  var bar = document.getElementById('app-bar');
+  if (!bar || !window.matchMedia('(max-width: 768px)').matches) return;
+  if (store) {
+    bar.href = store; bar.target = '_blank'; bar.rel = 'noopener';
+    bar.innerHTML = 'Get HaggleBuddy free <small>· ' + (ios ? 'App Store' : 'Google Play') + '</small>';
+  }
+  document.body.classList.add('has-app-bar');
+
+  var hero = document.querySelector('.hero-buttons');
+  var dl = document.getElementById('download');
+  // Show once the hero buttons have scrolled off the top; hide again as soon as
+  // the download section's own store buttons come on screen (and below it).
+  function update() {
+    var vh = window.innerHeight;
+    var pastHero = hero ? hero.getBoundingClientRect().bottom < 0 : true;
+    var atDownload = dl ? dl.getBoundingClientRect().top < vh : false;
+    var on = pastHero && !atDownload;
+    bar.classList.toggle('show', on);
+    bar.setAttribute('aria-hidden', String(!on));
+    bar.tabIndex = on ? 0 : -1;
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+
 <script>
 // Cookie-free visit counter (supabase/migrations/20261113000000_site_events.sql).
 // No cookies, no IP, no identifier: one anonymous row per page view or store tap.
@@ -1093,6 +1160,7 @@
     if (localStorage.getItem('hb_nocount')) return;
   } catch (e) {}
   if (navigator.webdriver) return;
+  if (!/(^|\.)hagglebuddy\.com$/.test(location.hostname)) return; // never count local/preview copies
 
   function cut(s, n) { return s ? String(s).slice(0, n) : null; }
   var tz = null, ref = null;
